@@ -22,6 +22,7 @@ public class Jedi {
         }
         int patrons = sc.nextInt();
         for (int i = 0; i < patrons; i += 1) {
+            HashMap<String,Integer> cust1 = new HashMap<>();
             String first = sc.next();
             String last = sc.next();
             int itemctr = sc.nextInt();
@@ -30,9 +31,15 @@ public class Jedi {
                 int qty = sc.nextInt();
                 String item = sc.next();
                 int index = items0.indexOf(item);
-                cust0.set(index, cust0.get(index) + 1);
+                cust1.put(item,1);
                 count0.set(index, count0.get(index) + qty);
                 cost += qty * catalogue.get(item);
+            }
+            List<String> myList = new ArrayList<>(cust1.keySet());
+            for (int j = 0; j < myList.size(); j++ ){
+                String item = myList.get(j);
+                int index = items0.indexOf(item);
+                cust0.set(index,cust0.get(index)+1);
             }
         }
         String entry0 = "";
