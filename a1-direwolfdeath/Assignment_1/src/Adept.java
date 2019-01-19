@@ -1,6 +1,8 @@
-import java.text.DecimalFormat;
-import java.util.*;
-
+import java.util.Scanner;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Collections;
+import java.util.ArrayList;
 
 
 public class Adept {
@@ -30,9 +32,9 @@ public class Adept {
             names.add(first + " " + last);
         }
         double largest = Collections.max(costs);
-        String biggest = names.get(costs.indexOf(largest));
+        String biggest = names.get(costs.lastIndexOf(largest));
         double smallest = Collections.min(costs);
-        String littlest = names.get(costs.indexOf(smallest));
+        String littlest = names.get(costs.lastIndexOf(smallest));
         double sum = 0;
         for(int i = 0; i < patrons; i += 1) {
             sum += costs.get(i);

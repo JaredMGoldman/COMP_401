@@ -1,4 +1,8 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.List;
+import java.util.HashMap;
+import java.util.ArrayList;
+
 
 public class Jedi {
     public static void main(String[] args) {
@@ -31,16 +35,16 @@ public class Jedi {
                 cost += qty * catalogue.get(item);
             }
         }
+        String entry0 = "";
+        String entry1 = "";
         for (int i = 0; i < items0.size(); i++) {
             if (cust0.get(i) == 0) {
-                String entry0 = "No";
-                String entry1 = "";
-                System.out.println(entry0 + " customers bought" + entry1 + " " + items0.get(i));
+                entry0 = "No";
             } else {
-                int entry0 = cust0.get(i);
-                String entry1 = (" " + count0.get(i));
-                System.out.println(entry0 + " customers bought" + entry1 + " " + items0.get(i));
+                entry0 = "" + cust0.get(i);
+                entry1 = (" " + count0.get(i));
             }
+            System.out.println(entry0 + " customers bought" + entry1 + " " + items0.get(i));
         }
     }
 }
